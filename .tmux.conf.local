@@ -361,12 +361,12 @@ bind C-l send-prefix
 # by default, launching tmux will update tpm and all plugins
 #   - true (default)
 #   - false
-tmux_conf_update_plugins_on_launch=true
+tmux_conf_update_plugins_on_launch=false
 
 # by default, reloading the configuration will update tpm and all plugins
 #   - true (default)
 #   - false
-tmux_conf_update_plugins_on_reload=true
+tmux_conf_update_plugins_on_reload=false
 
 # /!\ do not add set -g @plugin 'tmux-plugins/tpm'
 # /!\ do not add run '~/.tmux/plugins/tpm/tpm'
@@ -379,6 +379,17 @@ tmux_conf_update_plugins_on_reload=true
 #set -g @plugin 'tmux-plugins/tmux-continuum'
 #set -g @continuum-restore 'on'
 
+#
+# save config to disk and reload when next restart mac
+set -g @plugin 'tmux-plugins/tmux-cpu'
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-continuum'
+set -g @continuum-save-interval '15'
+set -g @continuum-restore 'on'
+set -g @resurrect-capture-pane-contents 'on'
+# Other config ...
+run -b '~/.tmux/plugins/tpm/tpm'
 
 # -- custom variables ----------------------------------------------------------
 
