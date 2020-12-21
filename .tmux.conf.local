@@ -333,7 +333,16 @@ bind C-l send-prefix
 
 # move status line to top
 #set -g status-position top
-
+#
+# save config to disk and reload when next restart mac
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-continuum'
+set -g @continuum-save-interval '15'
+set -g @continuum-restore 'on'
+set -g @resurrect-capture-pane-contents 'on'
+# Other config ...
+run -b '~/.tmux/plugins/tpm/tpm'
 
 # -- custom variables ----------------------------------------------------------
 # to define a custom #{foo} variable, define a POSIX shell function between the
