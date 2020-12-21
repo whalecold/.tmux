@@ -335,14 +335,23 @@ bind C-l send-prefix
 #set -g status-position top
 #
 # save config to disk and reload when next restart mac
-set -g @plugin 'tmux-plugins/tpm'
-set -g @plugin 'tmux-plugins/tmux-resurrect'
-set -g @plugin 'tmux-plugins/tmux-continuum'
-set -g @continuum-save-interval '15'
+# List of plugins
+set -g @tpm_plugins '                                                           \
+   https://github.com/jonmosco/kube-tmux                                        \
+   tmux-plugins/tpm                                                             \
+   tmux-plugins/tmux-continuum                                                  \
+   tmux-plugins/tmux-resurrect                                                  \
+ '
+
+# Other examples:
+# set -g @plugin 'github_username/plugin_name'
+# set -g @plugin 'git@github.com/user/plugin'
+# set -g @plugin 'git@bitbucket.com/user/plugin'
+
+set -g @continuum-save-interval 15
+set -g @continuum-boot 'on'
 set -g @continuum-restore 'on'
-set -g @resurrect-capture-pane-contents 'on'
-# Other config ...
-run -b '~/.tmux/plugins/tpm/tpm'
+set -g @continuum-boot-options 'iterm'
 
 # -- custom variables ----------------------------------------------------------
 # to define a custom #{foo} variable, define a POSIX shell function between the
