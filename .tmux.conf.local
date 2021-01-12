@@ -400,7 +400,7 @@ set -g @tpm_plugins '                                                           
 # set -g @plugin 'git@github.com/user/plugin'
 # set -g @plugin 'git@bitbucket.com/user/plugin'
 
-set -g @continuum-save-interval 15
+set -g @continuum-save-interval 3
 set -g @continuum-boot 'on'
 set -g @continuum-restore 'on'
 set -g @continuum-boot-options 'iterm'
